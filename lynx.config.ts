@@ -15,4 +15,8 @@ export default defineConfig({
     pluginReactLynx(),
     pluginTypeCheck(),
   ],
+  dev:{
+    liveReload:true,
+    hmr:true
+  }
 })

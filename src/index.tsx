@@ -1,11 +1,12 @@
-import '@lynx-js/preact-devtools'
-import '@lynx-js/react/debug'
-import { root } from '@lynx-js/react'
+import { furnituresPictures } from "./Pictures/furnitures/furnituresPictures";
+import "./App.css";
 
-import { App } from './App.jsx'
 
-root.render(<App />)
+import { root } from "@lynx-js/react";
+import Gallery from "./Gallery.jsx";
 
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
+function PictureList() {
+  return <Gallery pictureData={furnituresPictures} />;
 }
+
+root.render(<PictureList />);

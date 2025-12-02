@@ -10,9 +10,7 @@ export function App(props: {
 }) {
   const [alterLogo, setAlterLogo] = useState(false)
 
-  useEffect(() => {
-    console.info('Hello, ReactLynx')
-  }, [])
+
   props.onRender?.()
 
   const onTap = useCallback(() => {
@@ -32,6 +30,7 @@ export function App(props: {
           </view>
           <text className='Title'>React</text>
           <text className='Subtitle'>on Lynx</text>
+          <text className='Subtitle'>on Livestrem</text>
         </view>
         <view className='Content'>
           <image src={arrow} className='Arrow' />

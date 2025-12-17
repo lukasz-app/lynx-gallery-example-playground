@@ -11,7 +11,7 @@ export const NiceScrollbar = forwardRef((_, ref) => {
 
   const adjustScrollbar = (scrollTop: number, scrollHeight: number) => {
     const listHeight = SystemInfo.pixelHeight / SystemInfo.pixelRatio - 48;
-    
+
     const scrollbarHeight = listHeight * (listHeight / scrollHeight);
     const scrollbarTop = listHeight * (scrollTop / scrollHeight);
     setScrollbarHeight(scrollbarHeight);
@@ -20,12 +20,12 @@ export const NiceScrollbar = forwardRef((_, ref) => {
 
   useImperativeHandle(ref, () => ({ adjustScrollbar }), [adjustScrollbar]);
 
-
   return (
     <view
-      className="scrollbarBAD"
+      className="scrollbar"
       style={{ height: `${scrollbarHeight}px`, top: `${scrollbarTop}px` }}
     >
+      <text>BTS</text>
       <view className="scrollbar-effect glow" />
     </view>
   );

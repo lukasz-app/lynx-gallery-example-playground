@@ -19,8 +19,11 @@ export const NiceScrollbarMTS = (props: { "main-thread:ref": RefObject<MainThrea
     <view
       main-thread:ref={props["main-thread:ref"]}
       className="scrollbar"
-      style={{ right: "14px", backgroundColor: "darkkhaki" }}
+      style={{ left: "7px",  borderColor:"#fff", borderWidth: '1px' }}
     >
+      <text >
+        MTS
+      </text>
       <view className="scrollbar-effect glow" />
     </view>
   );

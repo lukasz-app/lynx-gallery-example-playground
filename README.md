@@ -24,7 +24,7 @@ The React Native version includes a "Jammer" button that intentionally blocks th
 
 ### Jammer Branch
 
-On a separate branch (this is `main`), there will be an implementation that attempts to break the background thread using a Jammer function, further exploring threading behavior in Lynx JS.
+This is a "Jammer" branch, with an implementation that attempts to break the background thread using a Jammer function, further exploring threading behavior in Lynx JS.
 
 ## Features
 

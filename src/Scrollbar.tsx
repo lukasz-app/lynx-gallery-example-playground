@@ -12,7 +12,7 @@ export const NiceScrollbar = forwardRef((_, ref) => {
   const adjustScrollbar = (scrollTop: number, scrollHeight: number) => {
     const listHeight = SystemInfo.pixelHeight / SystemInfo.pixelRatio - 48;
 
-    const scrollbarHeight = listHeight * (listHeight / scrollHeight);
+    const scrollbarHeight = listHeight * (listHeight / scrollHeight) * 1.5;
     const scrollbarTop = listHeight * (scrollTop / scrollHeight);
     setScrollbarHeight(scrollbarHeight);
     setScrollbarTop(scrollbarTop);
@@ -25,7 +25,11 @@ export const NiceScrollbar = forwardRef((_, ref) => {
       className="scrollbar"
       style={{ height: `${scrollbarHeight}px`, top: `${scrollbarTop}px` }}
     >
-      <text>BTS</text>
+      <view className="scrollbar-label">
+        <text>B</text>
+        <text>T</text>
+        <text>S</text>
+      </view>
       <view className="scrollbar-effect glow" />
     </view>
   );

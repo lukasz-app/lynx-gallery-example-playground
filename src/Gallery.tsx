@@ -35,16 +35,25 @@ const Gallery = (props: { pictureData: Picture[] }) => {
   };
 
   const toggleBTSJammer = () => {
-    setBTSJammerState(true);
+    console.log("Toggle jammer called, setting to true");
+    setBTSJammerState((prev) => !prev);
   };
-  useEffect(() => {
-    if (!btsJammerState) return;
+
+  const jam = () => {
     const start = Date.now();
     const end = start + 10000;
+    let i = 0;
     while (Date.now() < end) {
-      // JAM JS thread for 10 seconds
-      console.log("Jamming");
+      console.log("Jamming " + i++);
     }
+  };
+
+  useEffect(() => {
+    if (!btsJammerState) return;
+    console.log("Jammer state is true, starting jam effect");
+    console.log("Starting jam function");
+    jam();
+    console.log("Jam completed");
     setBTSJammerState(false);
   }, [btsJammerState]);
 
@@ -92,7 +101,7 @@ const Gallery = (props: { pictureData: Picture[] }) => {
         className="jammerContainer"
         style={{ width: "100%", flexDirection: "row", display: "flex" }}
       >
-        <view
+        {/* <view
           bindtap={() => {
             console.log("Click");
           }}
@@ -104,21 +113,26 @@ const Gallery = (props: { pictureData: Picture[] }) => {
           }}
         >
           <text>MTS Jammer: </text>
-        </view>
+        </view> */}
         <view
           bindtap={toggleBTSJammer}
           style={{
-            padding: "8px",
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
+            position: "absolute",
+            bottom: "20px",
+            right: "20px",
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            paddingTop: "12px",
+            paddingBottom: "12px",
+            borderRadius: "8px",
+            zIndex: 1000,
+            backgroundColor: btsJammerState
+              ? "rgba(255, 100, 72, 0.9)"
+              : "rgba(100, 100, 100, 0.9)",
           }}
         >
-          <text>
-            BTS Jammer:{" "}
-            <text style={{ color: btsJammerState ? "red" : "green" }}>
-              {btsJammerState ? "ON" : "OFF"}{" "}
-            </text>
+          <text style={{ color: "#fff", fontSize: "16px", fontWeight: "600" }}>
+            {btsJammerState ? "Jammer: On" : "Jammer: Off"}
           </text>
         </view>
       </view>

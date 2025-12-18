@@ -137,9 +137,38 @@ text {
   background: linear-gradient(to bottom, #ff6448, #ccddff, #3deae7);
   border-radius: 5px;
   overflow: hidden;
+  border: 1px solid #fff;
   box-shadow:
     0px 0px 4px 1px rgba(12, 205, 223, 0.4),
     0px 0px 16px 5px rgba(12, 205, 223, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollbar-label {
+  position: absolute;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.scrollbar-label text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a1929;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-shadow: 
+    0 0 3px rgba(61, 234, 231, 0.6),
+    0 0 6px rgba(204, 221, 255, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
 }
 
 
